@@ -1,6 +1,17 @@
+"use client";
+import { useRouter } from "next/navigation";
 import React from "react";
 
 export const Navigation = () => {
+  const router = useRouter();
+
+  const handleClickSignUp = () => {
+    router.push("/signuppage");
+  };
+
+  const handleClickLogIn = () => {
+    router.push("/loginpage");
+  };
   return (
     <div className="w-full h-fit py-3 px-[88px] flex justify-between bg-[#18181B]">
       {/* logo and name */}
@@ -21,10 +32,16 @@ export const Navigation = () => {
 
       {/* login and sign up */}
       <div className="flex w-fit h-fit gap-[12px]">
-        <button className="bg-[#F4F4F5] py-[8px] px-[12px] rounded-full text-[#18181B] text-[14px] font-[500] ">
+        <button
+          onClick={handleClickSignUp}
+          className="bg-[#F4F4F5] py-[8px] px-[12px] rounded-full text-[#18181B] text-[14px] font-[500] "
+        >
           Sign up
         </button>
-        <button className="bg-[#EF4444] py-[8px] px-[12px] rounded-full text-[#FAFAFA] text-[14px] font-[500] ">
+        <button
+          onClick={handleClickLogIn}
+          className="bg-[#EF4444] py-[8px] px-[12px] rounded-full text-[#FAFAFA] text-[14px] font-[500] "
+        >
           Log in
         </button>
       </div>
