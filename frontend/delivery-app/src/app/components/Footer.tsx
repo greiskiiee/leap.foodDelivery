@@ -6,7 +6,7 @@ export const Footer = () => {
   const footerText: string = "Fresh fast delivered ";
   return (
     <div className="w-full h-fit bg-[#18181B] flex flex-col">
-      <div className="bg-[#EF4444] flex w-full h-[92px] py-7 gap-[34px] px-[98px] mt-[60px] overflow-x-hidden">
+      <div className="bg-[#EF4444] flex w-full h-[92px] py-7 gap-10 px-[98px] mt-[60px] overflow-x-hidden whitespace-nowrap">
         <p className="w-[272px] inter font-[600] text-[30px] text-[#FAFAFA]">
           {footerText}
         </p>
@@ -121,7 +121,7 @@ export const Footer = () => {
         </div>
       </div>
       <div className="w-full h-fit py-8 flex flex-col gap-10   px-[98px]">
-        <div className="w-[98%] border-t border-t-[#F4F4F5]"></div>
+        <div className="w-[99%] border-t border-t-[#F4F4F5]"></div>
         <div className="flex gap-12">
           <p className="inter text-[14px] font-[400] text-[#71717A]">
             Copy right 2024 © Nomnom LLC

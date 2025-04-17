@@ -8,7 +8,6 @@ export default function Home() {
       <Navigation />
 
       <div className="h-[1200px]"></div>
-      <Footer />
     </div>
   );
 }
