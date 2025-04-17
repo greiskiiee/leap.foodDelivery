@@ -3,12 +3,25 @@ import { CategoryModel } from "../model/category.js";
 export const createCategory = async (req, res) => {
   const { categoryName } = req.body;
   try {
-    const category = await CategoryModel({
+    const category = await CategoryModel.create({
       categoryName: categoryName,
     });
-    return res.send({ success: true, category: category }).end();
+    return res.status(200).send({ success: true, category: category }).end();
   } catch (error) {
     console.error(error);
-    return res.send({ success: false, error: error }).end();
+    return res.status(400).send({ success: false, error: error }).end();
+  }
+};
+
+export const getCategoriees = async (req, res) => {
+  try {
+    const categories = await CategoryModel.find();
+    return res
+      .status(200)
+      .send({ success: true, categories: categories })
+      .end();
+  } catch (error) {
+    console.error(error);
+    return res.status(400).send({ success: false, error: error }).end();
   }
 };

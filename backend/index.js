@@ -3,6 +3,7 @@ import cors from "cors";
 import { connectMongoDB } from "./connectDB.js";
 import { userRouter } from "./routes/user.js";
 import { categoryRouter } from "./routes/category.js";
+import { foodRouter } from "./routes/food.js";
 
 const port = 8000;
 const app = express();
@@ -14,6 +15,7 @@ app.use(json());
 
 app.use("/user", userRouter);
 app.use("/category", categoryRouter);
+app.use("/food", foodRouter);
 
 app.get("/", (req, res) => {
   res.send("hello");

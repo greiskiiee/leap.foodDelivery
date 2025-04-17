@@ -22,7 +22,7 @@ export const createUser = async (req, res) => {
       address: address,
       isVerified: isVerified,
     });
-    users.push(user);
+    // users.push(user);
 
     return res.status(200).send({ success: true, user: user }).end();
   } catch (error) {
