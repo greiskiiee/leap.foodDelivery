@@ -25,3 +25,17 @@ export const getCategoriees = async (req, res) => {
     return res.status(400).send({ success: false, error: error }).end();
   }
 };
+
+export const deleteCategoryById = async (req, res) => {
+  const id = req.params;
+  try {
+    await CategoryModel.deleteOne(id);
+    return res
+      .status(200)
+      .send({ success: true, message: "category deleted" })
+      .end();
+  } catch (error) {
+    console.error(error);
+    return res.status(400).send({ success: false, error: error }).end();
+  }
+};

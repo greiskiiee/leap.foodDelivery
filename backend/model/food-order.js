@@ -4,12 +4,14 @@ const foodOrderItemSchema = new mongoose.Schema({
   foodId: {
     type: Schema.Types.ObjectId,
     ref: "Food",
+    required: true,
   },
   quantity: {
     type: Number,
     default: 1,
   },
 });
+
 const foodOrderSchema = new mongoose.Schema({
   user: {
     type: Schema.Types.ObjectId,
@@ -19,10 +21,7 @@ const foodOrderSchema = new mongoose.Schema({
     type: Number,
     default: 0.0,
   },
-  foodOrderItems: {
-    type: [Schema.Types.ObjectId],
-    ref: "Foods",
-  },
+  foodOrderItems: [foodOrderItemSchema],
   status: {
     type: String,
     enum: ["PENDING", "CANCELED", "DELIVERED"],
@@ -38,9 +37,9 @@ const foodOrderSchema = new mongoose.Schema({
   },
 });
 
-export const foodOrderItemModel = mongoose.model(
-  "FoodOrderItem",
-  foodOrderItemSchema
-);
+// export const foodOrderItemModel = mongoose.model(
+//   "FoodOrderItem",
+//   foodOrderItemSchema
+// );
 
 export const foodOrderModel = mongoose.model("FoodOrder", foodOrderSchema);
