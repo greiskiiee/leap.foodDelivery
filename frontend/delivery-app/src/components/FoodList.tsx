@@ -1,11 +1,7 @@
 import React from "react";
-
-export const FoodList = () => {
-  const fetchFoods = async () => {
-    try {
-    } catch (error) {
-      console.error(error, "error");
-    }
-  };
+interface FoodListProps {
+  data: any;
+}
+export const FoodList = ({ data }: FoodListProps) => {
   return <div>FoodList</div>;
 };

@@ -25,7 +25,7 @@ export default function SignUpPage() {
   };
 
   return (
-    <div className="w-screen h-screen flex justify-center items-center gap-16">
+    <div className="w-screen h-screen flex justify-center items-center gap-16 bg-white">
       <div className="w-[416px] flex flex-col gap-6 justify-between items-start">
         <button
           onClick={handleBack}
